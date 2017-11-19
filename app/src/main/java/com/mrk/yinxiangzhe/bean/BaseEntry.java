@@ -9,6 +9,8 @@ public class BaseEntry {
     private String mSessionId = "";
     //用户名称
     private String mUserName = "";
+    //用户密码
+    private String mUserPwd = "";
     //用户Id
     private String mUserId = "";
     //订单索引ID
@@ -68,6 +70,14 @@ public class BaseEntry {
 
     public void setUserName(String userName) {
         mUserName = userName;
+    }
+
+    public String getUserPwd() {
+        return mUserPwd;
+    }
+
+    public void setUserPwd(String userPwd) {
+        mUserPwd = userPwd;
     }
 
     public String getUserId() {

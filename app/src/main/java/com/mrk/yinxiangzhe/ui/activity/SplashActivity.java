@@ -1,11 +1,13 @@
 package com.mrk.yinxiangzhe.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 
 import com.mrk.yinxiangzhe.R;
 import com.mrk.yinxiangzhe.base.BaseActivity;
 import com.mrk.yinxiangzhe.bean.BaseEntry;
+import com.mrk.yinxiangzhe.utils.Utils;
 
 public class SplashActivity extends BaseActivity {
     private BaseEntry item;
@@ -31,6 +33,10 @@ public class SplashActivity extends BaseActivity {
                 } else {
                     // 没有登录态，进入登录页面
                     //new LoginTasks(mActivity).execute();
+                    Intent intent = new Intent(mActivity, MainActivity.class);
+                    mActivity.startActivity(intent);
+                    Utils.startActivityAnimation(mActivity);
+                    mActivity.finish();
                 }
             }
         }, 2000);

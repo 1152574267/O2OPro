@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+    useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "com.mrk.yinxiangzhe"
         minSdkVersion 15
@@ -17,6 +18,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    configurations {
+        all*.exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+        // ... and any other excludes go here
+    }
 }
 
 dependencies {
@@ -26,4 +34,20 @@ dependencies {
     })
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
+
+    //bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:
+    compile 'cn.bmob.android:bmob-sdk:3.5.5'
+    //如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)
+    compile 'cn.bmob.android:http-legacy:1.0'
+
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile('com.squareup.retrofit2:converter-gson:2.3.0') {
+        exclude group: 'com.google.code.gson'
+    }
+    compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+
+    compile "io.reactivex.rxjava2:rxjava:2.0.1"
+    compile "io.reactivex.rxjava2:rxandroid:2.0.1"
+
+    //compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
 }

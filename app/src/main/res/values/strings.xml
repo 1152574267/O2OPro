@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">yinxiangzhe</string>
+    <string name="app_name">O2OPro</string>
+    <string name="xdja_account">账号</string>
+    <string name="xdja_password">密码</string>
+    <string name="xdja_login">登录</string>
+    <string name="xdja_forget_password">忘记密码</string>
+    <string name="xdja_user_register">新用户注册</string>
+    <string name="xdja_user_start_register">注册</string>
+    <string name="xdja_register_success">注册成功</string>
+    <string name="xdja_register_failure">注册失败</string>
+    <string name="xdja_login_success">登录成功</string>
+    <string name="xdja_login_failure">登录失败</string>
+    <string name="xdja_user_or_pwd_empty">用户名或者密码为空</string>
 </resources>
