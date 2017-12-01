@@ -36,23 +36,23 @@ public class XdjaLoginPresenterImpl implements XdjaLoginContract.XdjaLoginPresen
         }
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Utils.BASE_URL)
+                .baseUrl("https://api.bmob.cn/")
                 .client(xdjaLoginModel.getOkHttpClient())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
         retrofit.create(ApiService.class)
-                .getUser(userName, userPwd, 1)
+                .getUser(userName, userPwd)
                 .enqueue(new Callback<BaseEntry>() {
 
                     @Override
                     public void onResponse(Call<BaseEntry> call, Response<BaseEntry> response) {
-                        Toast.makeText(mContext, mContext.getResources().getString(R.string.xdja_login_success) + ": " + response.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, response.toString(), Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onFailure(Call<BaseEntry> call, Throwable t) {
-                        Toast.makeText(mContext, mContext.getResources().getString(R.string.xdja_login_failure) + ":" + t.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, t.toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }

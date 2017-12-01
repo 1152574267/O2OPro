@@ -2,7 +2,9 @@ package com.mrk.yinxiangzhe.bean;
 
 import org.json.JSONObject;
 
-public class BaseEntry {
+import cn.bmob.v3.BmobUser;
+
+public class BaseEntry extends BmobUser {
     //设备Id
     private String mDeviceId = "";
     //会话ID

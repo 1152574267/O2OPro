@@ -15,6 +15,6 @@ public interface ApiService {
     Call<BaseEntry> createUser(@Body BaseEntry entry);
 
     @Headers({"X-Bmob-Application-Id:a084b0f6d2b5bdad98015a49bc68f000", "X-Bmob-REST-API-Key:67d80d14f6f856e4c50de8b8d5ec0f70", "Content-Type:application/json"})
-    @GET("BaseEntry")
-    Call<BaseEntry> getUser(@Query("mUserName") String userName, @Query("mUserPwd") String userPwd, @Query("isLogin") int isLogin);
+    @GET("1/login")
+    Call<BaseEntry> getUser(@Query("mUserName") String userName, @Query("mUserPwd") String userPwd);
 }

@@ -51,12 +51,12 @@ public class XdjaRegistPresenterImpl implements XdjaRegistContract.XdjaRegistPre
 
                     @Override
                     public void onResponse(Call<BaseEntry> call, Response<BaseEntry> response) {
-                        Toast.makeText(mContext, mContext.getResources().getString(R.string.xdja_register_success) + ": " + response.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, response.toString(), Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onFailure(Call<BaseEntry> call, Throwable t) {
-                        Toast.makeText(mContext, mContext.getResources().getString(R.string.xdja_register_failure) + ":" + t.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, t.toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
