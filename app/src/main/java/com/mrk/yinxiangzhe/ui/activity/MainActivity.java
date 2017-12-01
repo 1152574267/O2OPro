@@ -24,6 +24,7 @@ public class MainActivity extends Activity implements XdjaLoginContract.XdjaLogi
     private EditText mUserPassword;
     private Button mUserLogin;
     private Button mBarcodeScan;
+    private Button mBarcodeGallery;
 
     private XdjaLoginContract.XdjaLoginPresenter xdjaLoginPresenter;
 
@@ -43,10 +44,12 @@ public class MainActivity extends Activity implements XdjaLoginContract.XdjaLogi
         mUserPassword = (EditText) findViewById(R.id.xdja_password);
         mUserLogin = (Button) findViewById(R.id.xdja_login);
         mBarcodeScan = (Button) findViewById(R.id.xdja_barcode_scan);
+        mBarcodeGallery = (Button) findViewById(R.id.xdja_barcode_gallery);
 
         mUserRegister.setOnClickListener(this);
         mUserLogin.setOnClickListener(this);
         mBarcodeScan.setOnClickListener(this);
+        mBarcodeGallery.setOnClickListener(this);
     }
 
     @Override
@@ -69,6 +72,12 @@ public class MainActivity extends Activity implements XdjaLoginContract.XdjaLogi
                 Intent intent = new Intent(this, CaptureActivity.class);
                 startActivityForResult(intent, Utils.REQUEST_CODE);
                 break;
+            case R.id.xdja_barcode_gallery:
+                Intent intent1 = new Intent();
+                intent1.setAction(Intent.ACTION_PICK);
+                intent1.setType("image/*");
+                startActivityForResult(intent1, Utils.REQUEST_IMAGE);
+                break;
             default:
                 break;
         }
@@ -82,6 +91,10 @@ public class MainActivity extends Activity implements XdjaLoginContract.XdjaLogi
             // 处理二维码扫描结果
             case Utils.REQUEST_CODE:
                 Utils.startBarcodeScan(this, data);
+                break;
+            // 选择系统图片并解析
+            case Utils.REQUEST_IMAGE:
+                Utils.startBarcodeGallery(this, data);
                 break;
             default:
                 break;

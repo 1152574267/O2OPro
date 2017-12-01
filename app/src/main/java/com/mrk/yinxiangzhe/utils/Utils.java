@@ -13,6 +13,8 @@ import java.util.Map.Entry;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.telephony.TelephonyManager;
@@ -22,12 +24,16 @@ import android.widget.Toast;
 import com.mrk.lib_mvp_zxing.utils.CodeUtils;
 import com.mrk.yinxiangzhe.R;
 import com.mrk.yinxiangzhe.base.BaseActivity;
+import com.mrk.yinxiangzhe.ui.activity.MainActivity;
 
 public class Utils {
-    public static final String BASE_URL = "https://api.bmob.cn/1/classes/";
+    static final String TAG = Utils.class.getSimpleName();
 
+    public static final String BASE_URL = "https://api.bmob.cn/1/classes/";
     // 扫描跳转Activity RequestCode
     public static final int REQUEST_CODE = 100;
+    // 选择系统图片RequestCode
+    public static final int REQUEST_IMAGE = 101;
 
     public static String Get32MD5(String value) {
         char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
@@ -189,6 +195,35 @@ public class Utils {
                 Toast.makeText(context, "解析结果: " + result, Toast.LENGTH_LONG).show();
             } else if (type == CodeUtils.RESULT_FAILED) {
                 Toast.makeText(context, "解析二维码失败", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
+    /**
+     * 处理扫描结果（在界面上显示）
+     */
+    public static void startBarcodeGallery(Context context, Intent data) {
+        final Context mContext;
+
+        mContext = context;
+        if (data != null) {
+            Uri uri = data.getData();
+
+            try {
+                CodeUtils.analyzeBitmap(ImageUtil.getImageAbsolutePath(context, uri), new CodeUtils.AnalyzeCallback() {
+
+                    @Override
+                    public void onAnalyzeSuccess(Bitmap mBitmap, String result) {
+                        Toast.makeText(mContext, "解析结果:" + result, Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onAnalyzeFailed() {
+                        Toast.makeText(mContext, "解析二维码失败", Toast.LENGTH_LONG).show();
+                    }
+                });
+            } catch (Exception e) {
+                Log.d(TAG, "startBarcodeGallery exception: " + e.getMessage());
             }
         }
     }

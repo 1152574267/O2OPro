@@ -11,5 +11,6 @@
     <string name="xdja_login_success">登录成功</string>
     <string name="xdja_login_failure">登录失败</string>
     <string name="xdja_user_or_pwd_empty">用户名或者密码为空</string>
-    <string name="xdja_barcode_scan">二维码扫一扫</string>
+    <string name="xdja_barcode_scan">二维码扫描</string>
+    <string name="xdja_barcode_gallery">二维码相册</string>
 </resources>
