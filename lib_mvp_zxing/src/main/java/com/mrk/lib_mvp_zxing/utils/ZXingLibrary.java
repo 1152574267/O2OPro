@@ -21,4 +21,5 @@ public class ZXingLibrary {
         DisplayUtil.screenWidthDip = DisplayUtil.px2dip(context, dm.widthPixels);
         DisplayUtil.screenHightDip = DisplayUtil.px2dip(context, dm.heightPixels);
     }
+
 }
