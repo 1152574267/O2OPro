@@ -75,14 +75,15 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/xdja_barcode_about"
+        android:id="@+id/xdja_barcode_scan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:background="@android:color/holo_blue_light"
-        android:text="@string/xdja_barcode_about"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="80dp"
+        android:background="@android:color/holo_green_light"
+        android:text="@string/xdja_barcode_scan"
         android:textColor="#ffffff"
-        android:textSize="30sp" />
+        android:textSize="15sp" />
 </RelativeLayout>

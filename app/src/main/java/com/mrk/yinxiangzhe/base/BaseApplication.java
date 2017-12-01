@@ -12,4 +12,5 @@ public class BaseApplication extends Application {
 
         ZXingLibrary.initDisplayOpinion(this);
     }
+
 }

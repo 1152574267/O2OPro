@@ -12,19 +12,21 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.os.Environment;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.mrk.lib_mvp_zxing.utils.CodeUtils;
 import com.mrk.yinxiangzhe.R;
 import com.mrk.yinxiangzhe.base.BaseActivity;
 
 public class Utils {
     public static final String BASE_URL = "https://api.bmob.cn/1/classes/";
-    /**
-     * 扫描跳转Activity RequestCode
-     */
+
+    // 扫描跳转Activity RequestCode
     public static final int REQUEST_CODE = 100;
 
     public static String Get32MD5(String value) {
@@ -170,4 +172,25 @@ public class Utils {
 
         return infoIds;
     }
+
+    /**
+     * 处理扫描结果（在界面上显示）
+     */
+    public static void startBarcodeScan(Context context, Intent data) {
+        if (null != data) {
+            Bundle bundle = data.getExtras();
+            if (bundle == null) {
+                return;
+            }
+
+            int type = bundle.getInt(CodeUtils.RESULT_TYPE);
+            if (type == CodeUtils.RESULT_SUCCESS) {
+                String result = bundle.getString(CodeUtils.RESULT_STRING);
+                Toast.makeText(context, "解析结果: " + result, Toast.LENGTH_LONG).show();
+            } else if (type == CodeUtils.RESULT_FAILED) {
+                Toast.makeText(context, "解析二维码失败", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
 }
