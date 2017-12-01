@@ -73,4 +73,16 @@
         android:textColor="@android:color/holo_blue_light"
         android:textSize="20sp"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/xdja_barcode_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/holo_blue_light"
+        android:text="@string/xdja_barcode_about"
+        android:textColor="#ffffff"
+        android:textSize="30sp" />
 </RelativeLayout>

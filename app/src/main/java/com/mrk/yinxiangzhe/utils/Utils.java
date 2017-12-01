@@ -22,6 +22,10 @@ import com.mrk.yinxiangzhe.base.BaseActivity;
 
 public class Utils {
     public static final String BASE_URL = "https://api.bmob.cn/1/classes/";
+    /**
+     * 扫描跳转Activity RequestCode
+     */
+    public static final int REQUEST_CODE = 100;
 
     public static String Get32MD5(String value) {
         char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
