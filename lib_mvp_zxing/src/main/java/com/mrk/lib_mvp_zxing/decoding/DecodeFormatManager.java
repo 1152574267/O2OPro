@@ -27,7 +27,6 @@ import java.util.Vector;
 import java.util.regex.Pattern;
 
 public class DecodeFormatManager {
-
     private static final Pattern COMMA_PATTERN = Pattern.compile(",");
 
     public static final Vector<BarcodeFormat> PRODUCT_FORMATS;

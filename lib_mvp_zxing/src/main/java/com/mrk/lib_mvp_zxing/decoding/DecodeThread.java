@@ -30,13 +30,12 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * This thread does all the heavy lifting of decoding the images.
- * �����߳�
  */
-final class DecodeThread extends Thread {
-
+public final class DecodeThread extends Thread {
     public static final String BARCODE_BITMAP = "barcode_bitmap";
-    private final CaptureFragment fragment;
     private final Hashtable<DecodeHintType, Object> hints;
+
+    private final CaptureFragment fragment;
     private Handler handler;
     private final CountDownLatch handlerInitLatch;
 
@@ -44,25 +43,23 @@ final class DecodeThread extends Thread {
                  Vector<BarcodeFormat> decodeFormats,
                  String characterSet,
                  ResultPointCallback resultPointCallback) {
-
-        this.fragment = fragment;
         handlerInitLatch = new CountDownLatch(1);
-
         hints = new Hashtable<DecodeHintType, Object>(3);
 
+        this.fragment = fragment;
         if (decodeFormats == null || decodeFormats.isEmpty()) {
             decodeFormats = new Vector<BarcodeFormat>();
+            // 一维码
             decodeFormats.addAll(DecodeFormatManager.ONE_D_FORMATS);
+            // 二维码
             decodeFormats.addAll(DecodeFormatManager.QR_CODE_FORMATS);
             decodeFormats.addAll(DecodeFormatManager.DATA_MATRIX_FORMATS);
         }
 
         hints.put(DecodeHintType.POSSIBLE_FORMATS, decodeFormats);
-
         if (characterSet != null) {
             hints.put(DecodeHintType.CHARACTER_SET, characterSet);
         }
-
         hints.put(DecodeHintType.NEED_RESULT_POINT_CALLBACK, resultPointCallback);
     }
 
@@ -72,14 +69,17 @@ final class DecodeThread extends Thread {
         } catch (InterruptedException ie) {
             // continue?
         }
+
         return handler;
     }
 
     @Override
     public void run() {
         Looper.prepare();
+
         handler = new DecodeHandler(fragment, hints);
         handlerInitLatch.countDown();
+
         Looper.loop();
     }
 

@@ -35,9 +35,8 @@ import com.mrk.lib_mvp_zxing.ui.fragment.CaptureFragment;
 
 import java.util.Hashtable;
 
-final class DecodeHandler extends Handler {
-
-    private static final String TAG = DecodeHandler.class.getSimpleName();
+public final class DecodeHandler extends Handler {
+    static final String TAG = DecodeHandler.class.getSimpleName();
 
     private final CaptureFragment fragment;
     private final MultiFormatReader multiFormatReader;
@@ -69,7 +68,7 @@ final class DecodeHandler extends Handler {
         long start = System.currentTimeMillis();
         Result rawResult = null;
 
-        //modify here
+        // modify here
         byte[] rotatedData = new byte[data.length];
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++)

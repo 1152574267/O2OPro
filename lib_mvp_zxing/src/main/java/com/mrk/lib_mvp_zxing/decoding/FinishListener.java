@@ -24,7 +24,6 @@ import android.content.DialogInterface;
  */
 public final class FinishListener
         implements DialogInterface.OnClickListener, DialogInterface.OnCancelListener, Runnable {
-
     private final Activity activityToFinish;
 
     public FinishListener(Activity activityToFinish) {
@@ -42,5 +41,4 @@ public final class FinishListener
     public void run() {
         activityToFinish.finish();
     }
-
 }
