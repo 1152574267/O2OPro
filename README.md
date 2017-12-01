@@ -15,4 +15,4 @@ MVP + Rxjava2 + Retrofit2 + Okhttp3 + Zxing + Bmob
 
 二维码扫码
 
-二维码图片解析
+系统相册选择二维码图片解析
