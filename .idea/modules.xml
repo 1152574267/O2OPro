@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib_gesturelock/lib_gesturelock.iml" filepath="$PROJECT_DIR$/lib_gesturelock/lib_gesturelock.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_mvp_zxing/lib_mvp_zxing.iml" filepath="$PROJECT_DIR$/lib_mvp_zxing/lib_mvp_zxing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib_wxapi/lib_wxapi.iml" filepath="$PROJECT_DIR$/lib_wxapi/lib_wxapi.iml" />
       <module fileurl="file://$PROJECT_DIR$/yinxiangzhe.iml" filepath="$PROJECT_DIR$/yinxiangzhe.iml" />
     </modules>
   </component>

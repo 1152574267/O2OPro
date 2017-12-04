@@ -1,1 +1,1 @@
-include ':app', ':lib_mvp_zxing'
+include ':app', ':lib_mvp_zxing', ':lib_wxapi', ':lib_gesturelock'

@@ -9,7 +9,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/lib_gesturelock" />
             <option value="$PROJECT_DIR$/lib_mvp_zxing" />
+            <option value="$PROJECT_DIR$/lib_wxapi" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -52,5 +52,6 @@ dependencies {
     //compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
 
     compile project(':lib_mvp_zxing')
+    compile project(':lib_gesturelock')
 //    compile 'cn.mrk.android:mvp-zxing-library:1.0'
 }
