@@ -53,5 +53,6 @@ dependencies {
 
     compile project(':lib_mvp_zxing')
     compile project(':lib_gesturelock')
+    compile project(':lib_banner')
 //    compile 'cn.mrk.android:mvp-zxing-library:1.0'
 }

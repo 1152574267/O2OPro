@@ -9,6 +9,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mrk.banner.base.Banner;
+import com.mrk.banner.loader.GlideImageLoader;
+import com.mrk.banner.transformer.DefaultTransformer;
 import com.mrk.lib_mvp_zxing.ui.activity.CaptureActivity;
 import com.mrk.lib_mvp_zxing.utils.CodeUtils;
 import com.mrk.yinxiangzhe.R;
@@ -25,6 +28,8 @@ public class MainActivity extends Activity implements XdjaLoginContract.XdjaLogi
     private Button mUserLogin;
     private Button mBarcodeScan;
     private Button mBarcodeGallery;
+    // Banner
+    private Banner mBanner;
 
     private XdjaLoginContract.XdjaLoginPresenter xdjaLoginPresenter;
 
@@ -38,6 +43,20 @@ public class MainActivity extends Activity implements XdjaLoginContract.XdjaLogi
         initData();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        mBanner.startAutoPlay();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        mBanner.stopAutoPlay();
+    }
+
     public void initView() {
         mUserRegister = (TextView) findViewById(R.id.xdja_user_register);
         mUserAccount = (EditText) findViewById(R.id.xdja_account);
@@ -45,6 +64,7 @@ public class MainActivity extends Activity implements XdjaLoginContract.XdjaLogi
         mUserLogin = (Button) findViewById(R.id.xdja_login);
         mBarcodeScan = (Button) findViewById(R.id.xdja_barcode_scan);
         mBarcodeGallery = (Button) findViewById(R.id.xdja_barcode_gallery);
+        mBanner = (Banner) findViewById(R.id.xdja_banner);
 
         mUserRegister.setOnClickListener(this);
         mUserLogin.setOnClickListener(this);
@@ -55,6 +75,13 @@ public class MainActivity extends Activity implements XdjaLoginContract.XdjaLogi
     @Override
     public void initData() {
         xdjaLoginPresenter = new XdjaLoginPresenterImpl(this);
+
+        mBanner.setImages(Utils.getImageList(this))
+                .setImageLoader(new GlideImageLoader())
+                .setBannerAnimation(DefaultTransformer.class)
+                .isAutoPlay(true)
+                .setDelayTime(3000)
+                .start();
     }
 
     @Override

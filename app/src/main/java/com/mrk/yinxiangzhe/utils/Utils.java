@@ -3,6 +3,7 @@ package com.mrk.yinxiangzhe.utils;
 import java.security.MessageDigest;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -24,7 +25,6 @@ import android.widget.Toast;
 import com.mrk.lib_mvp_zxing.utils.CodeUtils;
 import com.mrk.yinxiangzhe.R;
 import com.mrk.yinxiangzhe.base.BaseActivity;
-import com.mrk.yinxiangzhe.ui.activity.MainActivity;
 
 public class Utils {
     static final String TAG = Utils.class.getSimpleName();
@@ -226,6 +226,14 @@ public class Utils {
                 Log.d(TAG, "startBarcodeGallery exception: " + e.getMessage());
             }
         }
+    }
+
+    public static List<String> getImageList(Context context) {
+        String[] uriArray = context.getResources().getStringArray(R.array.url);
+        List uriList = Arrays.asList(uriArray);
+        List<String> imageList = new ArrayList(uriList);
+
+        return imageList;
     }
 
 }
