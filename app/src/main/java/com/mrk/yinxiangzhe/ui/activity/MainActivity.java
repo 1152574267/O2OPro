@@ -7,13 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.mrk.banner.base.Banner;
 import com.mrk.banner.loader.GlideImageLoader;
 import com.mrk.banner.transformer.DefaultTransformer;
 import com.mrk.lib_mvp_zxing.ui.activity.CaptureActivity;
-import com.mrk.lib_mvp_zxing.utils.CodeUtils;
 import com.mrk.yinxiangzhe.R;
 import com.mrk.yinxiangzhe.contract.XdjaLoginContract;
 import com.mrk.yinxiangzhe.presenter.XdjaLoginPresenterImpl;

@@ -1,1 +1,1 @@
-include ':app', ':lib_mvp_zxing', ':lib_gesturelock', ':lib_banner'
+include ':app', ':lib_mvp_zxing', ':lib_gesturelock', ':lib_banner', ':lib_circleimageview'

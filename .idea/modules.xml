@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_banner/lib_banner.iml" filepath="$PROJECT_DIR$/lib_banner/lib_banner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib_circleimageview/lib_circleimageview.iml" filepath="$PROJECT_DIR$/lib_circleimageview/lib_circleimageview.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_gesturelock/lib_gesturelock.iml" filepath="$PROJECT_DIR$/lib_gesturelock/lib_gesturelock.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_mvp_zxing/lib_mvp_zxing.iml" filepath="$PROJECT_DIR$/lib_mvp_zxing/lib_mvp_zxing.iml" />
       <module fileurl="file://$PROJECT_DIR$/yinxiangzhe.iml" filepath="$PROJECT_DIR$/yinxiangzhe.iml" />

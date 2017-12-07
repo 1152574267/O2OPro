@@ -8,14 +8,14 @@
         android:layout_width="match_parent"
         android:layout_height="80dp" />
 
-    <ImageView
+    <com.mrk.circleimageview.CircleImageView
         android:id="@+id/xdja_myphoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_below="@id/xdja_banner"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/activity_splash" />
 
     <EditText
         android:id="@+id/xdja_account"
