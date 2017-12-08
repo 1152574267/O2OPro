@@ -2,7 +2,7 @@
 
 App框架：
 
-MVP + Rxjava2 + Retrofit2 + Okhttp3 + Gson + Zxing + Banner + Bmob
+MVP + Rxjava2 + Retrofit2 + Okhttp3 + Gson + Zxing + Banner + CircleImageView + Bmob
 
 
 
@@ -22,3 +22,5 @@ MVP + Rxjava2 + Retrofit2 + Okhttp3 + Gson + Zxing + Banner + Bmob
 设置手势密码、重置手势密码、手势密码验证登录
 
 设置广告图片轮播控件，支持无限循环和多种主题，可以灵活设置轮播样式、动画、轮播和切换时间
+
+添加圆形图片控件，设置用户圆形图像
