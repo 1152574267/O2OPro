@@ -2,12 +2,7 @@
 
 App框架：
 
-MVP + Rxjava2 + Retrofit2 + Okhttp3 + Gson + Zxing + Banner + CircleImageView + Bmob
-
-
-
-
-
+采用MVP + Rxjava2 + Retrofit2 + Okhttp3 + Gson + Zxing + Glide + Banner + CircleImageView + Bmob模块化开发
 
 功能：
 
